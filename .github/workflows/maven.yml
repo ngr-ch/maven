@@ -25,11 +25,11 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - run: mkdir -p path/to/artifact
+    - run: mkdir -p drop
 
-    - run: cp **/*.jar path/to/artifact/
+    - run: cp **/*.jar drop/
 
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: path/to/artifact/*.jar
+        path: drop/*.jar
